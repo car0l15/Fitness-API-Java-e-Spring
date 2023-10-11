@@ -329,7 +329,7 @@ A rota GET `/fitness/workouts` da sua aplicação deve:
 <details>
 <summary><strong> 🗣 Nos dê feedbacks sobre o exercício!</strong></summary>
 
-Ao finalizar e submeter o exercício, não se esqueça de avaliar sua experiência preenchendo o [formulário](https://be-trybe.typeform.com/to/ZTeR4IbH).
+Ao finalizar e submeter o exercício, não se esqueça de avaliar sua experiência preenchendo o [formulário](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_hidden=CH1&template=betrybe/java-0x-exercicio-fitness-api).
 **Leva menos de 3 minutos!**
 
 </details>
