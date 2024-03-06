@@ -16,11 +16,6 @@ public class FitnessService implements FitnessServiceInterface {
 
   private FakeFitnessDatabase fakeFitnessDatabase;
 
-  /**
-   * Instantiates a new Fitness service.
-   *
-   * @param fakeFitnessDatabase the fake fitness database
-   */
   @Autowired
   public FitnessService(FakeFitnessDatabase fakeFitnessDatabase) {
     this.fakeFitnessDatabase = fakeFitnessDatabase;
