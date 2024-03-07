@@ -11,6 +11,7 @@ import java.util.Optional;
 public interface FitnessServiceInterface {
   WorkoutDto saveWorkout(WorkoutCreationDto newWorkoutDto);
 
+
   Optional<WorkoutDto> getWorkout(Long id);
 
   List<WorkoutDto> getAllWorkouts();

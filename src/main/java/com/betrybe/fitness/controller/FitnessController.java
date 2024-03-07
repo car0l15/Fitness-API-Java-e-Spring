@@ -1,5 +1,6 @@
 package com.betrybe.fitness.controller;
 
+import com.betrybe.fitness.dto.WorkoutCreationDto;
 import com.betrybe.fitness.dto.WorkoutDto;
 import com.betrybe.fitness.service.FitnessServiceInterface;
 import java.util.Objects;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -56,5 +59,11 @@ public class FitnessController implements FitnessControllerInterface {
     }
 
     return ResponseEntity.ok(workoutDto);
+  }
+
+  @PostMapping("/workouts")
+  public ResponseEntity<WorkoutDto> createWorkout(@RequestBody WorkoutCreationDto workoutCreationDto) {
+   WorkoutDto create = fitnessServiceInterface.saveWorkout(workoutCreationDto);
+   return ResponseEntity.status(201).body(create);
   }
 }
