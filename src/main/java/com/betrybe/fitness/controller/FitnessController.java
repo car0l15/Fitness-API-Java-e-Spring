@@ -61,9 +61,17 @@ public class FitnessController implements FitnessControllerInterface {
     return ResponseEntity.ok(workoutDto);
   }
 
+  /**
+   * Create workout response entity.
+   *
+   * @param workoutCreationDto the workout creation dto
+   * @return the response entity
+   */
   @PostMapping("/workouts")
-  public ResponseEntity<WorkoutDto> createWorkout(@RequestBody WorkoutCreationDto workoutCreationDto) {
-   WorkoutDto create = fitnessServiceInterface.saveWorkout(workoutCreationDto);
-   return ResponseEntity.status(201).body(create);
+  public ResponseEntity<WorkoutDto> createWorkout(
+      @RequestBody WorkoutCreationDto workoutCreationDto) {
+    WorkoutDto create =
+        fitnessServiceInterface.saveWorkout(workoutCreationDto);
+    return ResponseEntity.status(201).body(create);
   }
 }

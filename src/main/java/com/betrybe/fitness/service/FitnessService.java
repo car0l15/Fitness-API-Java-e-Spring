@@ -33,7 +33,8 @@ public class FitnessService implements FitnessServiceInterface {
 
     Workout savedWorkout = fakeFitnessDatabase.saveWorkout(workout);
 
-    return new WorkoutDto(savedWorkout.getId(), savedWorkout.getName(), savedWorkout.getRepetitions());
+    return new WorkoutDto(savedWorkout.getId(), savedWorkout.getName(),
+        savedWorkout.getRepetitions());
 
   }
 
