@@ -15,4 +15,8 @@ public interface FitnessServiceInterface {
   Optional<WorkoutDto> getWorkout(Long id);
 
   List<WorkoutDto> getAllWorkouts();
+
+  void deleteWorkout(Long id);
+  WorkoutDto updateWorkout(Long id, WorkoutCreationDto workoutDto);
+
 }

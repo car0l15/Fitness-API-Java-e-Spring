@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 /**
  * The type Fitness controller.
@@ -86,4 +89,20 @@ public class FitnessController implements FitnessControllerInterface {
         fitnessServiceInterface.saveWorkout(workoutCreationDto);
     return ResponseEntity.status(201).body(create);
   }
+
+  @DeleteMapping("/workouts/{id}")
+  public ResponseEntity<Void> deleteWorkout(@PathVariable Long id) {
+    fitnessServiceInterface.deleteWorkout(id);
+    return ResponseEntity.noContent().build();
+  }
+
+  @PutMapping("/workouts/{id}")
+  public ResponseEntity<WorkoutDto> updateWorkout(@PathVariable Long id, @RequestBody WorkoutCreationDto workoutDto) {
+    WorkoutDto updatedWorkout = fitnessServiceInterface.updateWorkout(id, workoutDto);
+    if (updatedWorkout == null) {
+      return ResponseEntity.notFound().build();
+    }
+    return ResponseEntity.ok(updatedWorkout);
+  }
+
 }

@@ -67,4 +67,29 @@ public class FitnessService implements FitnessServiceInterface {
             workout.getRepetitions()))
         .collect(Collectors.toList());
   }
+
+
+  @Override
+  public WorkoutDto updateWorkout(Long id, WorkoutCreationDto workoutDto) {
+    Optional<Workout> optionalWorkout = fakeFitnessDatabase.getWorkout(id);
+    if (optionalWorkout.isEmpty()) {
+      return null;
+    }
+
+    Workout existingWorkout = optionalWorkout.get();
+
+    existingWorkout.setName(workoutDto.name());
+    existingWorkout.setRepetitions(workoutDto.repetitions());
+    existingWorkout.setSecretTechnique(workoutDto.secretTechnique());
+
+    Workout updatedWorkout = fakeFitnessDatabase.saveWorkout(existingWorkout);
+
+    return new WorkoutDto(updatedWorkout.getId(), updatedWorkout.getName(), updatedWorkout.getRepetitions());
+  }
+
+  @Override
+  public void deleteWorkout(Long id) {
+    fakeFitnessDatabase.deleteWorkout(id);
+  }
+
 }
