@@ -32,7 +32,7 @@ mvn test -Dtest="TestClassName"
 
 </details>
 
-## Rotas
+## Rotas da API
 
 Depois de garantir que você está no diretório do projeto, execute o comando mvn spring-boot:run para iniciar a aplicação
 
@@ -42,22 +42,36 @@ Esta rota retornará uma mensagem. Para acessá-la, você pode usar um navegador
 Exemplo:
 http://localhost:8080/fitness
 
-2 - GET /fitness/workouts/{id}:
+2 - GET/fitness/workouts/{id}:
 
 Esta rota retornará os dados do treino correspondente ao ID fornecido. Substitua {id} pelo ID do treino que você deseja acessar. 
 Exemplo:
 curl http://localhost:8080/fitness/workouts/1
 
-3 - POST /fitness/workouts:
+3 - POST/fitness/workouts:
 
 Esta rota receberá dados de um novo treino pelo corpo da requisição e salvará esses dados. Os dados devem ser do tipo WorkoutCreationDto. Após salvar os dados, a rota retornará o novo objeto que foi salvo com o status code 201 (“created”). Exemplo:
 
-{"nome":"Treino 1", "descricao":"Descrição do Treino 1"}
+{"name":"Novo Treino", "repetitions":10, "secretTechnique":"Nova Técnica"}
 
-4 - GET /fitness/workouts: 
+4 - GET/fitness/workouts: 
 
 Esta rota retornará uma lista de todos os treinos disponíveis. Exemplo:
 http://localhost:8080/fitness/workouts
+
+5 - PUT/fitness/workouts/{id}
+
+http://localhost:8080/fitness/workouts/1
+
+Esta rota permite que você atualize um treino existente.
+
+{"name":"Novo Treino","repetitions":10,"secretTechnique":"Nova Técnica"}
+
+6 - DELETE /fitness/workouts/{id}
+
+Esta rota permite que você delete um treino existente.
+
+http://localhost:8080/fitness/workouts/1
 
 
 
