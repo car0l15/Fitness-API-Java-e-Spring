@@ -2,9 +2,13 @@
 
 Seja bem-vindo ao repositório do projeto Fitness API!
 
-Este projeto é um estudo prático envolvendo Java e Spring. Foi implementado uma API REST utilizando o Spring, aplicando conceitos importantes como camada de serviço, DTOs, record e anotações para mapeamento de rotas
+Este projeto é um estudo prático envolvendo Java e Spring. Foi implementado uma API REST utilizando o Spring, aplicando conceitos importantes como camada de serviço, DTOs, record e anotações para mapeamento de rotas.
 
-OBS: Este projeto ainda não está conectado a um database, por isso, temos a classe FakeFitnessDatabase que imita o comportamento de um DB e gerencia as informações.
+# Objetivo
+
+O objetivo desta aplicação é fornecer uma API REST que gerencia informações sobre treinos fitness. A API permite que os usuários realizem várias operações, incluindo a obtenção de informações sobre um treino específico, a criação de novos treinos, a atualização de treinos existentes e a exclusão de treinos. Além disso, a API também pode retornar uma lista de todos os treinos disponíveis.
+<br>
+Vale ressaltar que, no momento, a aplicação não está conectada a um banco de dados real. Em vez disso, ela usa a classe chamada FakeFitnessDatabase para imitar o comportamento de um banco de dados e gerenciar as informações.
 
 <details>
 <summary><strong>🎛 Checkstyle</strong></summary>
